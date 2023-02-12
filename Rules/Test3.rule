@@ -1,0 +1,528 @@
+@RULE Test3
+@TABLE
+n_states:20
+neighborhood:Moore
+symmetries:rotate4reflect
+#0     F0
+#1     F1
+#2     F2
+#3     P1
+#4     P2
+#5     Pk
+#6     P1e
+#7     P2e
+#8     Pke
+#9     P1h
+#10   P2h
+#11   Pkh
+#12   Pb1
+#13   Pb2
+#14   Pbk
+#15   Ph
+#16   Pc
+#17   Pt
+#18   Pe
+#19   setA
+
+var P1={3}
+var P2={4}
+var Pk={5}
+var P1e={6}
+var P2e={7}
+var Pke={8}
+var P1h={9}
+var P2h={10}
+var Pkh={11}
+var Pb1={12}
+var Pb2={13}
+var Pbk={14}
+var Ph={15}
+var Pc={16}
+var Pt={17}
+var Pe={18}
+
+
+var setA={19}
+
+var P0={0 , 1 , 2}
+var P0|1=P0
+var P0|2=P0
+var P0|3=P0
+var P0|4=P0
+var P0|5=P0
+var P0|6=P0
+var P0|7=P0
+
+#var Pw={1 , 2 , Pk}
+var Pw={0 , 1 , 2 , Pk}
+var Pw|1=Pw
+var Pw|2=Pw
+var Pw|3=Pw
+var Pw|4=Pw
+var Pw|5=Pw
+var Pw|6=Pw
+var Pw|7=Pw
+
+
+var P={P0 , P1 , P2 , P1e , P2e , P1h , P2h , Pk , Ph , Pt , Pe , setA , Pc , Pb1 , Pb2 , Pbk , Pke , Pkh}  #全体像素
+var P|1=P
+var P|2=P
+var P|3=P
+var P|4=P
+var P|5=P
+var P|6=P
+var P|7=P
+
+var P0k={P0 , Pk}
+var P0k|1=P0k
+var P0k|2=P0k
+var P0k|3=P0k
+var P0k|4=P0k
+var P0k|5=P0k
+var P0k|6=P0k
+var P0k|7=P0k
+
+var P012={P0 , P1 , P2 , Pc}  #蛋白像素与空气
+var P012|1=P012
+var P012|2=P012
+var P012|3=P012
+var P012|4=P012
+var P012|5=P012
+var P012|6=P012
+var P012|7=P012
+
+var P012k={P012 , Pk}  #蛋白像素+k与空气
+var P012k|1=P012k
+var P012k|2=P012k
+var P012k|3=P012k
+var P012k|4=P012k
+var P012k|5=P012k
+var P012k|6=P012k
+var P012k|7=P012k
+
+var P12={P1 , P2}  #蛋白像素
+var P12|1=P12
+var P12|2=P12
+var P12|3=P12
+var P12|4=P12
+var P12|5=P12
+var P12|6=P12
+var P12|7=P12
+
+var P0bk={P0 , Pbk}  #空气+kb
+var P0bk|1=P0bk
+var P0bk|2=P0bk
+var P0bk|3=P0bk
+var P0bk|4=P0bk
+var P0bk|5=P0bk
+var P0bk|6=P0bk
+var P0bk|7=P0bk
+
+var P12k={P12 , Pk}  #蛋白像素+k
+var P12k|1=P12k
+var P12k|2=P12k
+var P12k|3=P12k
+var P12k|4=P12k
+var P12k|5=P12k
+var P12k|6=P12k
+var P12k|7=P12k
+
+var P12ke={P1e , P2e , Pke}  #蛋白物理态 (激活）
+var P12ke|1=P12ke
+var P12ke|2=P12ke
+var P12ke|3=P12ke
+var P12ke|4=P12ke
+var P12ke|5=P12ke
+var P12ke|6=P12ke
+var P12ke|7=P12ke
+
+var P12kh={P1h , P2h , Pkh}  #蛋白物理态 (减速）
+var P12kh|1=P12kh
+var P12kh|2=P12kh
+var P12kh|3=P12kh
+var P12kh|4=P12kh
+var P12kh|5=P12kh
+var P12kh|6=P12kh
+var P12kh|7=P12kh
+
+var Pb={Pb1 , Pb2 , Pbk}
+var Pb|1=Pb
+var Pb|2=Pb
+var Pb|3=Pb
+var Pb|4=Pb
+var Pb|5=Pb
+var Pb|6=Pb
+var Pb|7=Pb
+
+var Pn12k={P0 , P12ke , P12kh , Ph , Pe , Pc , Pb}  #蛋白物理态与0，除k
+var Pn12k|1=Pn12k
+var Pn12k|2=Pn12k
+var Pn12k|3=Pn12k
+var Pn12k|4=Pn12k
+var Pn12k|5=Pn12k
+var Pn12k|6=Pn12k
+var Pn12k|7=Pn12k
+
+var Pn12={Pn12k , Pk}  #蛋白物理态与0
+var Pn12|1=Pn12
+var Pn12|2=Pn12
+var Pn12|3=Pn12
+var Pn12|4=Pn12
+var Pn12|5=Pn12
+var Pn12|6=Pn12
+var Pn12|7=Pn12
+
+var Pnt={P0 , P12k , P12ke , P12kh , Ph , Pe , setA , Pc , Pb}
+var Pnt|1=Pnt
+var Pnt|2=Pnt
+var Pnt|3=Pnt
+var Pnt|4=Pnt
+var Pnt|5=Pnt
+var Pnt|6=Pnt
+var Pnt|7=Pnt
+
+var Pf={Ph , Pc , Pb} #所有飞行像素
+var Pf|1=Pf
+var Pf|2=Pf
+var Pf|3=Pf
+var Pf|4=Pf
+var Pf|5=Pf
+var Pf|6=Pf
+var Pf|7=Pf
+
+var F0={0}
+var F1={1 , P12k , P12ke , P12kh , Ph , Pt , Pe , setA , Pc , Pb}
+var F1|1=F1
+var F1|2=F1
+var F1|3=F1
+var F1|4=F1
+var F1|5=F1
+var F1|6=F1
+var F1|7=F1
+var F2={2}
+
+var F={F0 , F1 , F2}
+var F|1=F
+var F|2=F
+var F|3=F
+var F|4=F
+var F|5=F
+var F|6=F
+var F|7=F
+
+var F01={F0 , F1}
+var F01|1=F01
+var F01|2=F01
+var F01|3=F01
+var F01|4=F01
+var F01|5=F01
+var F01|6=F01
+var F01|7=F01
+
+var F12={F1 , F2}
+var F12|1=F12
+var F12|2=F12
+var F12|3=F12
+var F12|4=F12
+var F12|5=F12
+var F12|6=F12
+var F12|7=F12
+
+P12ke , setA , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P12ke  #调试规则
+P12ke , P|1 , setA , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P12ke  #调试规则
+P12kh , setA , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P12kh  #调试规则
+P12kh , P|1 , setA , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P12kh  #调试规则
+Pf , setA , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , Pf  #调试规则
+Pf , P|1 , setA , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , Pf  #调试规则
+P0 , setA , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P0  #调试规则
+P0 , P|1 , setA , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P0  #调试规则
+
+#===========================格点系统
+P2 , Pb1 , P12 , Pnt|1 ,P012k , P012k|1 , P012k|2 , Pnt|2 , Pnt|3 , P2 #防溢出
+P0k , Pb , P12 , P0k|1 , P12|1 , P , P|1 , P|2 , P|3 , P0k
+P1 , Pnt , P0k|3 , Pc , P|1 , Pnt|1 , P0k , P0k|2 , P0k|1 , P2  #减1
+P0k , Pc , P2 , P0|1 , P2 , P0|2 , P2 , P0|3 , P2 , P0k #Pc防溢出
+P2 , Pnt , P , Pc , P|1 , Pnt|1 , P0k , P0k|2 , P0k|1 , P1  #减1
+P0 , Pb1 , Pnt|1 , Pnt|2 , P12k , P0 , P012k , Pnt|3 , Pnt , P1 #生成1
+P0 , Pb2 , Pnt|1 , Pnt|2 , P12k , P0 , P012k , Pnt|3 , Pnt , P2 #生成2
+P0 , Pbk , Pnt|1 , Pnt|2 , P12k , P0 , P012k , Pnt|3 , Pnt , Pk #生成k
+Pw , Pnt , Pb , P0|3 , Pb|1 , Pnt|2 , P0 , P0|1 , P0|2 , Pbk #间隙补偿
+P0k|7 , P1 , Pbk , P0k , Pbk , P1 , P012k|2 , P0k|1 , P012k|4 , Pbk #转录5
+P0k|7 , P1 , P012k , P0k , Pbk , P1 , P012k|2 , P0k|1 , P012k|4 , Pbk #转录4
+P0k , P0k|1 , Pe , P0k|2 , P , P0k|3 , P|1 , P0k|4 , Pe , Pc #转录3
+P0k , P1 , Pbk , P0k|3 , P0k|1 , Pnt|1 , P0k|2 , P0k|4 , Pbk , Pe #转录2
+P0k|7 , P2 , P012k , Ph , P012k|2 , P2 , P012k|1 , P0k|2 , P012k|3 , Pbk #转录1
+#===========================
+
+#===========================物理系统
+P0k , Pb , P|1 , Pn12|1 , P|2 , P12k , P|3 , Pn12|4 , P|5 , Pt #防Pb正面撞击
+P0k , P , P12 , Pb , P12 , P|1 , P|2 , P|4 , P|3 , P0k  #Pb飞行防同擦边
+P0k , Pnt , P12 , Pb , Pn12 , Pnt|3 , P|2 , Pnt|4 , P|4 , P0k  #Pb飞行防单擦边
+P0k , Pnt , P12 , Pb , P12|1 , Pnt|1 , P|2 , Pnt|4 , P|3 , Pb  #Pb飞行异擦边
+P0k , Pc , P12 , Pnt , P , P|1 , P|2 , Pnt|1 , P12 , Pc  #Pc同擦边
+Pw , Pnt , Pb , Pb|1 , Pnt|2 , Pnt|3 , P|2 , Pnt|4 , P|4 , Pb|1  #Pb板
+Pw , Pnt , Pf , Pf , Pnt|2 , Pnt|3 , P|2 , Pnt|4 , P|4 , Pw  #防f板
+P0k , Pf , Pnt , P12 , P , Pn12 , P|1 , Pn12|2 , Pnt|2 , P0k  #防f擦边#2
+P0k , Pnt , P12 , Pf , Pnt|2 , Pnt|3 , P|2 , Pnt|4 , P|4 , P0k  #防f擦边#1
+P0k , Pnt , Pnt|1 , Pf , Pnt|2 , Pnt|3 , P|2 , Pnt|4 , P|4 , Pf  #f直线飞行
+P0k , P12ke , Pt , P , P|1 , P|2 , P|3 , P12k , P|5 , Pt  #e留尾
+P0k , P12ke , P12k , P , P|1 , P|2 , P|3 , P12k|1 , P|5 , Pt  #e留尾
+
+P0 , Pnt , Pn12k , P1e , Pn12k|1 , P|2 , P , Pnt|2 , P|1 , P1h  #1e前进#1
+P0 , Pnt , Pn12k , P2e , Pn12k|1 , P|2 , P , Pnt|2 , P|1 , P2h  #2e前进#1
+P0 , Pnt , Pn12k , Pke , Pn12k|1 , P|2 , Pn12 , Pnt|2 , Pn12|1 , Pkh  #ke前进#1
+
+P1 , Pnt , Pn12 , Ph , Pn12|1 , Pnt|1 , P , P|2 , P|1 , P1e  #1激活#2
+P1 , P , P0k , Ph , P0k|1 , P|3 , P012 , P0k|2 , P012|1 , P1e  #1激活#1
+P1 , Pt , P12ke , P0k , P|2 , P|3 , P|4 , P|5 , P|6 , P1  #1传导激活防溢出
+P1 , P , P12ke , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P1e  #1传导激活
+P1 , P12kh , Pnt|1 , Pw|1 , P|2 , P|3 , P , P|4 , Pnt|3 , P1e  #1隔空激活
+P1 , Pb2 , P12 , Pnt|1 ,P012 , P012|1 , P012|2 , Pnt|2 , Pnt|3 , P1#防溢出
+P1 , Pb2 , Pnt , Pnt|1 ,P012 , P012|1 , P012|2 , Pnt|2 , Pnt|3 , P2
+
+P2 , Pnt , Pn12 , Ph , Pn12|1 , Pnt|1 , P , P|2 , P|1 , P2e  #2激活#2
+P2 , Pnt , P0k , Ph , P0k|1 , Pnt|1 , P012 , P0k|2 , P012|1 , P2e  #2激活#1
+P2 , Pt , P12ke , P0k , P|2 , P|3 , P|4 , P|5 , P|6 , P2  #2传导激活防溢出
+P2 , P , P12ke , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P2e  #2传导激活
+P2 , P12kh , Pnt|1 , Pw|1 , P|2 , P|3 , P , P|4 , Pnt|3 , P2e  #2隔空激活
+P2 , Pb1 , Pnt , Pnt|1 ,P012 , P012|1 , P012|2 , Pnt|2 , Pnt|3 , P1
+
+Pk , Pnt|1 , P12kh , Pnt , P|3 , P|4 , P|5 , P|6 , P|7 , 1  #k12前进避让
+Pk , P12kh , P0k , P|3 , P , P|1 , P|2 , P|4 , P0k|3 , 1
+Pk , Pt , P12ke , P0k , P|2 , P|3 , P|4 , P|5 , P|6 , Pk  #k传导激活防溢出
+Pk , P , P12ke , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , Pke  #k传导激活
+Pk , P12kh , Pnt|1 , Pw|1 , P|2 , P|3 , P , P|4 , Pnt|3 , Pke  #k隔空激活
+
+P1h , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P1  #1h衰变
+Pt , Pnt , Pn12 , P1e , Pn12|1 , P12 , P , Pnt|2 , P|1 , P1h  #1e前进
+Pe , Pnt , Pn12 , P1e , Pn12|1 , Pnt|1 , P , Pnt|2 , P|1 , P1h  #1e前进
+
+P2h , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , P2  #2h衰变
+Pt , Pnt , Pn12 , P2e , Pn12|1 , P12 , P , Pnt|2 , P|1 , P2h  #2e前进
+Pe , Pnt , Pn12 , P2e , Pn12|1 , Pnt|1 , P , Pnt|2 , P|1 , P2h  #2e前进
+
+Pkh , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , Pk  #kh衰变
+Pt , Pnt , Pn12 , Pke , Pn12|1 , P12 , P , Pnt|2 , P|1 , Pkh  #ke前进
+Pe , Pnt , Pn12 , Pke , Pn12|1 , Pnt|1 , P , Pnt|2 , P|1 , Pkh  #ke前进
+
+Pc , P2 , P012 , P1 , P012|1 , P2 , P012|2 , Pt , P012|3 , Pe#
+Pf , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , Pt  #f衰变
+Pt , P , P|1 , P|2 , P|3 , F12|4 , F12|5 , F12|6 , F12 ,  1 #t衰变
+Pt , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , F0  #t衰变
+Pe , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , Pt  #e衰变
+P12ke , P , P|1 , P|2 , P|3 , P|4 , P|5 , P|6 , P|7 , Pt  #激活衰变
+
+#===========================
+
+#===========================蛋白系统
+  #example P0k , P1 , P012k , P1 , P012k|1 , P1 , P012k|2 , P1 , P012k|3 , F1
+  #1111
+#P0k , P1 , Pe , P1 , Pe , P1 , P012k|1 , P1 , P012k|2 , Pe
+
+  #2111
+P0k , P2 , Pe , P1 , P012k|1 , P1 , P012k|2 , P1 , P012k|3 , Pe
+P0k , P2 , P012k , P1 , Pe , P1 , Pe , P1 , P012k|3 , Pe
+P0k , P2 , Pb , P1 , P|1 , P1 , P|2 , P1 , P|3 , Pb
+
+  #2211
+P0k , P2 , P012k , P2 , Pe , P1 , P012k|1 , P1 , P012k|2 , Pe
+P0k , P2 , P , P2 , Pb , P1 , P|1 , P1 , P|2 , Pb
+
+  #2121
+P0k , P2 , Pe , P1 , P012k , P2 , P012k|1 , P1 , P012k|2 , Pe
+
+  #2221
+P0k , P2 , P012k , P2 , P012k|1 , P2 , Pe , P1 , P012k|2 , Pe
+P0k , P1 , P012k , P2 , Pe , P2 , Pe , P2 , P012k|3 , Pe
+P0k , P2 , P , P2 , P|1 , P2 , Pb , P1 , P|2 , Pb
+
+  #2222
+#P0k , P2 , Pe , P2 , Pe , P2 , P012k|1 , P2 , P012k|2 , Pe
+#P0k , P2 , Ph , P2 , Pe , P2 , P012k|1 , P2 , P012k|2 , Pe
+
+  #0111
+Pw|7 , P1 , Pe , P1 , Pe , P1 , P012k|2 , P0k , P012k|3 , Pe
+F0 , P1 , Pe , P1 , Pe , P1 , P012k|2 , P0k , P012k|3 , F2
+P0k , P1 , P012k , P1 , P012k|1 , P1 , P012k|2 , P0k|1 , F2 , F2
+
+  #0211
+P0k|7 , P1 , P012k , P1 , P012k|1 , P2 , Ph , P0k|2 , P012k|2 , Pb2#
+P0k|7 , P1 , P012k , P1 , P012k|1 , P2 , P012k|2 , P0k|2 , Ph , Pb1#
+P0k|7 , P1 , P012k , P1 , P012k|1 , P2 , Ph , P0k|2 , Ph , Pbk#
+Pw , P1 , P , P1 , Pb , P2 , P|1 , P0k|1 , P|2 , Pb
+
+  #0121
+P0k|7 , P1 , P012k , P2 , P012k|1 , P1 , P012k|2 , P0k , Pe , Pe#
+P0k|7 , P1 , P012k , P2 , P012k|1 , P1 , Pe , P0k , Pe , Pe#
+
+  #0212
+P0k|7 , P2 , P012k , P1 , Pe , P2 , P012k|2 , P0k , P012k|3 , Ph#
+#P0k|7 , P2 , P012k , P1 , Ph , P2 , P012k|2 , P0k , P012k|3 , Ph#
+Pc , P2 , P012k , P1 , P012k|1 , P2 , P012k|2 , P0k , P012k|3 , Pe#
+
+
+  #0221
+P0k|7 , P2 , P012k , P2 , P012k|1 , P1 , Ph , P0k|2 , P012k|2 , Pb2#
+P0k|7 , P2 , P012k , P2 , P012k|1 , P1 , P012k|2 , P0k|2 , Ph , Pb1#
+P0k|7 , P2 , P012k , P2 , P012k|1 , P1 , Ph , P0k|2 , Ph , Pbk#
+Pw|7 , P2 , P , P2 , Pb , P1 , P|1 , P0k|2 , P|2 , Pb
+
+  #0222
+P0k , P2 , Pe , P2 , Pe , P2 , P012k|1 , P0k|2 , P012k|3 , Pe
+P0k , P2 , P012k , P2 , P012k|1 , P2 , P012k|2 , P0k|2 , F2 , F2
+
+  #0***
+P0k , P12 , P , P12|1 , P|1 , P12|2 , P012k|2 , P0k|1 , F2 , F2
+
+  #0101
+P0k|7 , P1 , P012k , P0k , Ph , P1 , P012k|2 , P0k|1 , P012k|4 , Pe#
+P0k|7 , P1 , P012k , P0k , Ph , P1 , Ph , P0k|1 , P0k|2 , Pe#
+#P0k|7 , P1 , P012k , P0k , Pe , P1 , P012k|2 , P0k|1 , P012k|4 , Pe#
+P0k|7 , P1 , P012k , P0k , Pe , P1 , Ph , P0k|1 , P012k|3 , Pe#
+P0k|7 , P1 , Pe , P0k , Pe , P1 , P012k , P0k|1 , P012k|1 , Pe#
+P0k|7 , P1 , Pe , P0k , Ph , P1 , P012k , P0k|1 , P012k|1 , Pe#
+P0k|7 , P1 , P012k , Pnt , Pc , P1 , Pc , P0k|1 , P012k|4 , Pc#
+
+  #0201
+P0k|7 , P2 , P012k , P0k , Pe , P1 , Pe , P0k|2 , P012k|3 , Pe#
+P0k|7 , P2 , P012k , P0k , Ph , P1 , Ph , P0k|2 , P012k|3 , Ph#
+P0k|7 , P2 , Ph , P0k , P012k|2 , P1 , P012k|3 , P0k|1 , P012k|5 , Pe#
+P0k|7 , P2 , Ph , P0k , P012k|2 , P1 , P012k|3 , P0k|1 , Ph , Pe#
+P0k|7 , P2 , Pe , P0k , P012k|2 , P1 , P012k|3 , P0k|1 , P012k|5 , Pe#
+P0k|7 , P2 , Pe , P0k , P012k|2 , P1 , P012k|3 , P0k|1 , Ph , Pe#
+P0k|7 , P2 , Pe , P0k , Pe , P1 , P012k|3 , P0k|1 , P012k|4 , Pe#
+P0k|7 , P2 , P0k , P012k|1 , Pc , P1 , Pc , P0k|2 , P012k|3 , Pc#
+P0k|7 , P2 , Pbk , P0k , P012k|2 , P1 , P012k|3 , P0k|1 , P , Pbk#
+
+  #0202
+P0k|7 , P2 , P012k , P0k|1 , Ph , P2 , Ph , P0k|2 , P012k|3 , Ph#
+P0k|7 , P2 , P012k , P0k|1 , Pe , P2 , Ph , P0k|2 , P012k|3 , Pe#
+P0k|7 , P2 , P012k , P0k|1 , Pe , P2 , Pe , P0k|2 , P012k|3 , Pe#
+P0k|7 , P2 , Pe , P0k|1 , Pe , P2 , P0k|3 , P0k|2 , P012k|3 , Pe#
+P0k|7 , P2 , Ph , P0k|1 , Ph , P2 , P012k , P0k|2 , P012k|3 , Pc#
+P0k|7 , P2 , Pc , Pnt|1 , P012k|1 , P2 , P012k|2 , P0k|2 , P012k|3 , Pb1#
+
+
+  #0011
+P0k , P1 , P , P1 , Ph , P0k|1 , P012k|1 , P0k|2 , P012k|2 , Ph
+
+  #0021
+P0k|7 , P2 , P012k , P1 , Ph , P0k|1 , P012k|1 , P0k|2 , P012k|2 , Pe#
+P0k|7 , P1 , P012k , P2 , Ph , P0k|1 , P012k|1 , P0k|2 , P012k|2 , Pe#
+Pw|7 , P1 , P012k , P2 , P012k|1 , F0 , P012k|2 , F0 , P012k|3 , F0#
+P0k|7 , P2 , Pe , P1 , P012k , P0k|1 , P012k|1 , P0k|2 , P012k|2 , Ph#
+P0k|7 , P2 , Pe , P1 , P012k , P0k|1 , P012k|1 , P0k|2 , Ph , Ph#
+
+  #0022
+P0k|7 , P2 , P , P2 , Ph , P0k|1 , P012k|1 , P0k|2 , P012k|2 , Ph#
+
+  #00**
+F2 , P12 , P012k , P12|1 , F , P0k|1 , P012k|1 , P0k|2 , F|1 , 1
+0 , P12 , P , P12|1 , F2 , P0k|1 , P012k|1 , P0k|2 , F , F2
+P0k , P12 , P012k , P12 , P012k|1 , F0 , P012k|2 , F0 , P012k|3 , F0
+
+  #0001
+P0k|7 , P1 , Ph , P0k|1 , P012k|2 , P0k|2 , P012k|3 , P0k|3 , Ph , Ph#
+Pw|7 , P1 , P , Pn12|1 , Pn12|2 , P12kh , Pn12|3 , Pn12|4 , P|5 , Pe#
+Pw|7 , P1 , P , Pn12|1 , Pn12|2 , P12kh , Pt , P|1 , P|5 , Pe#
+P0k , P1 , Pc , P0k|1 , P012k|1 , P0k|2 , P012k|2 , P0k|3 , Pc , Pc
+P0k , P1 , Pe , P0k|1 , P012k|1 , P0k|2 , P012k|2 , P0k|3 , Pe , Pe
+
+
+  #0002
+P0k|7 , P2 , Ph , P0k|1 , P012k|2 , P0k|2 , P012k|3 , P0k|3 , Ph , Ph#
+P0k|7 , P2 , Pe , P0k|1 , P012k|2 , P0k|2 , P012k|3 , P0k|3 , Pe , Ph#
+P0k|7 , P2 , Pe , P0k|1 , P012k|2 , P0k|2 , P012k|3 , P0k|3 , Ph , Ph#
+P0k|7 , P2 , Pe , P0k|1 , P012k|2 , P0k|2 , P12|3 , P0k|3 , P012k|4 , Ph#
+P0k|7 , P2 , P012k , P0k|1 , Pn12|2 , P0k|2 , Pn12|3 , Pnt , Pc , Pc#
+
+
+  #000*
+Pw , P12 , P0bk , Pw|1 , P0k|2 , Pw|2 , P0k|3 , Pw|3 , Pb1 , Pb1
+Pw , P12 , P0bk , Pw|1 , P0k|2 , Pw|2 , P0k|3 , Pw|3 , Pb2 , Pb2
+Pw , P12 , Pb1 , Pw|1 , P012k|2 , Pw|2 , P012k|3 , Pw|3 , Pb1 , Pb2
+Pw , P12 , Pb2 , Pw|1 , P012k|2 , Pw|2 , P012k|3 , Pw|3 , Pb2 , Pb1
+Pw , P12 , Pb1 , Pw|1 , P012k|2 , Pw|2 , P012k|3 , Pw|3 , Pb2 , Pbk
+0 , P12 , F2 , P012k , P012k|1 , P012k|2 , P012k|3 , P012k|4 , F2 , F2
+#===========================
+
+#===========================细胞液系统
+F1,F2,F2,F1,F1,F1,F1,F1,F2,F2
+F1,F2,F1,F2,F1,F1,F1,F1,F2,F2
+F1,F1,F2,F2,F1,F1,F1,F1,F2,F2
+F1,F2,F2,F2,F1,F1,F1,F1,F1,F2
+F1,F2,F1,F1,F2,F1,F1,F1,F2,F2
+F1,F1,F2,F1,F2,F1,F1,F1,F2,F2
+F1,F2,F1,F1,F1,F2,F1,F1,F2,F2
+F1,F1,F2,F1,F1,F2,F1,F1,F2,F2
+F1,F1,F1,F2,F1,F2,F1,F1,F2,F2
+F1,F2,F1,F2,F1,F2,F1,F1,F1,F2
+F2,F1,F1,F1,F1,F1,F1,F1,F1,1
+F2,F1,F1,F1,F1,F1,F1,F1,F2,1
+F2,F2,F1,F1,F1,F1,F1,F1,F1,1
+F2,F2,F2,F2,F2,F1,F1,F1,F2,1
+F2,F2,F2,F2,F1,F2,F1,F1,F2,1
+F2,F2,F2,F1,F2,F2,F1,F1,F2,1
+F2,F2,F1,F2,F2,F2,F1,F1,F2,1
+F2,F1,F2,F2,F2,F2,F1,F1,F2,1
+F2,F2,F2,F2,F2,F2,F1,F1,F1,1
+F2,F2,F2,F2,F2,F2,F1,F1,F2,1
+F2,F2,F2,F1,F2,F1,F2,F1,F2,1
+F2,F2,F1,F2,F2,F1,F2,F1,F2,1
+F2,F2,F2,F2,F2,F1,F2,F1,F2,1
+F2,F2,F1,F2,F1,F2,F2,F1,F2,1
+F2,F2,F2,F2,F1,F2,F2,F1,F2,1
+F2,F2,F2,F1,F2,F2,F2,F1,F2,1
+F2,F2,F2,F2,F2,F2,F2,F1,F2,1
+F2,F2,F1,F2,F1,F2,F1,F2,F2,1
+F2,F2,F2,F2,F1,F2,F1,F2,F2,1
+F2,F2,F1,F2,F2,F2,F1,F2,F2,1
+F2,F2,F2,F2,F2,F2,F1,F2,F2,1
+F2,F2,F2,F2,F2,F2,F2,F2,F2,1
+F0 , F , F2 , F2 , P12 , F|1 , F|2 , F|3 , F|4 , F2 #液延骨架扩散
+F0 , F , P12 , F2 , P12|1 , F|1 , F|2 , F|3 , F|4 , F2 #液延骨架扩散
+F0 , 1 , F1 , F1|1 , F0 , F|1 , F|2 , F|3 , F1|2 , 1
+F0 , F2 , F2 , F , F|1 , F|2 , F|3 , F|4 , F2 , F2
+F0 , F2 , F2 , F2 , F|1 , F|2 , F|3 , F|4 , F|5 , F2
+F0 , F2 , F , F|1 , F|2 , F|3 , F|4 , F|5 , F|6 , 1
+1 , F01 , F01|1 , F01|2 , F01|3 , F01|4 , F01|5 , P12 , F0 , 1#骨架旁不衰变
+1 , F0 , F , F|1 , F|2 , P12 , F|3 , F|4 , F|5 , F0 #液1脱离骨架
+P0 , P12 , F , P12|1 , F|1 , P12|2 , F|2 , P12|3 , F|3 , 1 #液1填充骨架
+1 , F , F|1 , F|2 , F|3 , F|4 , F|5 , F0 , F0 , F0
+1 , F0 , F|1 , F|2 , F|3 , F|4 , F|5 , F0 , F0 , F0
+#1 , F , F2 , Pn12 , F|2 , F1 , F|3 , Pn12|1 , F2 , F2
+#1 , F2 , F , Pn12 , F|2 , F1 , F|3 , Pn12|1 , F2 , F2
+F2 , F0 , F0 , F|1 , F|2 , F|3 , F|4 , F|5 , F0 , 1
+F2 , F0 , F0 , F0 , F|2 , F|3 , F|4 , F|5 , F|6 , 1
+F2 , P12 , F , F|1 , F|2 , F|3 , F|4 , F|5 , F|6 , 1 #液2脱离骨架
+F2 ,  F , P12 , F|1 , F|2 , F|3 , F|4 , F|5 , F|6 , 1 #液2脱离骨架
+#F2 , F1 , F , F2 , F2 , F2 , F2 , F2 , F , 1
+#F2 , F , F1 , F , F2 , F2 , F2 , F2 , F2 , 1
+#F2 , F1 , F , F1|1 , F12 , F12|1 , F12|2 , F|4 , F|5 , 1
+
+
+#===========================
+
+
+@COLORS
+0 0 90 140#                   F0
+1 0 0 0#                         F1
+2 0 0 170#                     F2
+3 140 140 140#             P1
+4 140 40 40#                 P2
+6 250 250 250#             P1e
+7 250 140 140#             P2e
+9 200 200 200#             P1h
+10 200 100 100#           P2h
+15 255 0 255#               Ph
+17 128 255 0#               Pt
+18 255 255 0#               Pe
+19 0 155 255#               setA
+16 255 0 0#                   Pc
+12 220 220 170#           Pb1
+13 220 70 20#               Pb2
+14 150 170 150#           Pbk
+5 50 50 70#                 Pk
+11 80 100 100#             Pkh
+8 100 150 150#             Pke
+

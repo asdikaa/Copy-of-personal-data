@@ -1,0 +1,21 @@
+@RULE Xnet
+@TABLE
+
+n_states:3
+neighborhood:Moore
+symmetries:rotate4reflect
+var *={1,2}
+var *1=*
+var *2=*
+var *3=*
+var *4=*
+var *5=*
+var *6=*
+var *7=*
+
+0,0,1,0,2,0,0,0,0,2
+0,0,*,0,*,0,0,0,0,1
+0,0,*,0,0,0,0,0,0,*
+*,0,*1,0,*1,0,*1,0,*2,*2
+*,0,*1,0,*1,0,*2,0,*3,*1
+

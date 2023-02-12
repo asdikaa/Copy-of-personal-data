@@ -1,0 +1,37 @@
+@RULE Test4
+@TABLE
+n_states:5
+neighborhood:Moore
+symmetries:rotate4reflect
+var h={1}
+var t={2}
+var k={3}
+var nt={0}
+var nt1=nt
+var nt2=nt
+var nt3=nt
+var nt4=nt
+var nt5=nt
+var nt6=nt
+var nt7=nt
+
+var a={0,1,2,3}
+var a1=a
+var a2=a
+var a3=a
+var a4=a
+var a5=a
+var a6=a
+var a7=a
+0,h,0,h,0,a,a1,a2,a3,k
+0,h,0,a1,a,h,0,a2,0,k
+0,k,t,a1,a2,a3,a4,a5,a,h
+0,0,t,h,h,0,a,a1,0,h
+t,0,h,h,0,0,0,0,0,t
+h,h,a,0,0,0,0,t,0,k
+h,t,t,h,h,0,0,0,0,0
+0,h,h,a,a1,a2,a3,a4,nt1,h
+0,h,nt,a,a1,a2,a3,a4,nt1,h
+h,a,a1,a2,a3,a4,a5,a6,a7,t
+k,a,a1,a2,a3,a4,a5,a6,a7,t
+t,a,a1,a2,a3,a4,a5,a6,a7,0
