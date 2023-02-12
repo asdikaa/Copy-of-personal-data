@@ -1,0 +1,18 @@
+xx(x)=sgn(-x) (log(2 , -(abs(x))+2)-1)
+
+z(x)=((yy(x))/(abs(yy(x)))) ((2^(abs(yy(x)))-1)/(2^(abs(yy(x))-1)))
+
+C=(2 ((a-k b+k c)/(k^(2)+1))-a,((2)/(k)) (a-((a-k b+k c)/(k^(2)+1)))+c)
+
+1pAP6p5VmnQE*.fggjnsy3BKUmBpGWr6sCZxKhCUuTEhIb5lBk8jzaR4va4nBwvgdQ5wMD92LG41aZde3BPaovy75Jp4SlvEbyKjJmWzXyOrJoIpLuS1dEsV9qWDxgQBzmaPF6.tniebZchiknrw07FOYjv6KZp4MfzIe*NmAb1UyRxS.aQ*bCqXN2kR9yufRE2xzqibVVSPNMMPFJ4DTcYl2HdtTo8S*L1SuJtJ5cAgsNIsJuqSQ7rWsXDweN7viWLB1xqkeZVVCEprtz27yGfu
+
+P(x) = g(x) f'(x) ( f(x) )^(g(x)-1) + g'(x) log(e,f(x)) (f(x))^g(x)
+
+https://www.geogebra.org/calculator/ubrwncbh
+https://www.geogebra.org/calculator/zy885cgt
+
+https://lib-fdglle6plfmjqnl2rqis5545.1lib.cz/
+
+
+
+
